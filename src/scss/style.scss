@@ -1,0 +1,377 @@
+@mixin font($font_name, $file_name, $weight, $style) {
+    @font-face { font-family: $font_name; font-display: swap; src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2"), url('../fonts/#{$file_name}.eot?#iefix') format('embedded-opentype'), url('../fonts/#{$file_name}.ttf') format('truetype'); font-weight: #{$weight}; font-style: #{$style}; }
+    }
+    
+$color_white: #fff;
+$color_red: #FF0013;
+$color_green: #00A03E;
+$color_blue: #0182AC;
+$color_turquoise: #00B2CB;
+$color_darkblue: #274562;
+
+
+html {
+    font-size: 62.5%;
+    @media (max-width: 768px){
+        font-size: 50%;
+    }
+    @media (max-width: 550px){
+        font-size: 40%;
+    }
+}
+
+
+@import "fonts";
+@import "bootstrap";
+@import "owl.carousel.min";
+
+
+
+body{
+    background: $color_white;
+}
+
+.content{
+    h1{
+        font-family: YesevaOne-Regular;
+        font-size: 5.4rem;
+        text-align: center;
+        line-height: 96.46%;
+        color: $color_darkblue;
+    }
+
+    .wrap_sectors{
+        padding-top: 10.95rem;
+        margin-bottom: 13rem;
+
+        .container-fluid{
+            max-width: 108rem;
+
+            h1{
+                margin-bottom: 5.1rem;
+            }    
+
+            .one-sector{
+                text-align: center;
+                background: linear-gradient(180deg, #FFFFFF 58.23%, #F2F6F8 100%), #FFFFFF;
+                border: 1px solid #D7E2EA;
+                border-width: 0px 1px 1px 1px;
+                overflow: hidden;
+
+                /*position: relative;
+                top: -2px;
+                left: 6px;
+                width: 245px;*/
+
+
+                &.color_red{
+                    .one-sector__title{
+                        color: $color_red;
+                    }
+
+                    .one-sector__button a{
+                        background: $color_red;
+                    }
+                }
+
+                &.color_green{
+                    .one-sector__title{
+                        color: $color_green;
+                    }
+
+                    .one-sector__button a{
+                        background: $color_green;
+                    }
+                }
+                
+                &.color_blue{
+                    .one-sector__title{
+                        color: $color_blue;
+                    }
+
+                    .one-sector__button a{
+                        background: $color_blue;
+                    }
+                }
+
+                &.color_turquoise{
+                    .one-sector__title{
+                        color: $color_turquoise;
+                    }
+
+                    .one-sector__button a{
+                        background: $color_turquoise;
+                    }
+                }
+
+                &__img{
+                    margin-bottom: 2.1rem;
+                    position: relative;
+                    left: -0.1rem;
+
+
+                    img{
+                        width: 102%;
+                    }
+                }
+
+                &__title{
+                    font-family: YesevaOne-Regular;
+                    font-size: 2rem;
+                    line-height: 100%;
+                    text-transform: uppercase;
+                    margin-bottom: 3.1rem;
+
+                    span{
+                        display: block;
+                    }
+
+                    @media (max-width: 768px){
+                        font-size: 2.75rem;
+                    }
+                }
+
+                &__discount{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    width: 70%;
+                    margin: 0 auto 2.4rem;
+
+                    &__left{
+                        font-family: OpenSans-Light;
+                        font-size: 1.6rem;
+                        line-height: 2.2rem;
+                        text-align: center;
+                        margin-right: 0.7rem;
+                        text-decoration: line-through;
+
+                        @media (max-width: 768px){
+                            font-size: 2rem;
+                        }
+                    }
+
+                    &__right{
+                        font-family: OpenSans-Bold;
+                        font-size: 1.4rem;
+                        line-height: 1.9rem;
+                        height: 2.1rem;
+                        width: 9rem;
+                        background: #FEED01;
+                        clip-path: polygon(11% 0%, 100% 0%, 100% 100%, 11% 100%, 0% 50%);
+
+                        @media (max-width: 768px){
+                            font-size: 1.75rem;
+                            height: 2.75rem;
+                            width: 12rem;
+                            line-height: 2.5rem;
+                        }
+                    }
+                }
+
+                &__price{
+                    font-family: OpenSans-SemiBold;
+                    font-size: 3rem;
+                    line-height: 100%;
+                    margin-bottom: 2.8rem;
+
+                    @media (max-width: 768px){
+                        font-size: 3.75rem;
+                    }
+                }
+
+                &__price-title{
+                    font-family: OpenSans-SemiBold;
+                    font-size: 1rem;
+                    line-height: 104%;
+                    text-transform: uppercase;
+                    border: 1px solid #D7E2EA;
+                    border-width: 1px 0px 1px 0px;
+                    margin: 0 auto 2.4rem;
+                    width: 7.5rem;
+                    padding: 0.3rem 0px 0.9rem 0px;
+
+                    span{
+                        display: block;
+                    }
+
+                    @media (max-width: 768px){
+                        font-size: 1.25rem;
+                        width: 10rem;
+                        padding: 0.9rem 0px;
+                    }
+                }
+
+                &__button{
+                    text-align: center;
+                    a{
+                        font-family: OpenSans-SemiBold;
+                        font-size: 1.6rem;
+                        line-height: 144.68%;
+                        color: $color_white;
+                        text-decoration: none;
+                        display: block;
+                        width: 80%;
+                        margin: 0 auto 2.7rem;
+                        padding: 0.8rem 0px;
+
+                        @media (max-width: 768px){
+                            font-size: 1.75rem;
+                        }
+                    }
+                }
+
+                @media (max-width: 992px){
+                   margin-bottom: 2.5rem;
+                }
+            }
+
+            .mobile-carousel{
+                overflow: hidden;
+                .owl-stage{
+                    display: flex;
+                }
+                .owl-dots{
+                    display: flex;
+                    justify-content: center;
+
+                    .owl-dot{
+                        width:12px;
+                        height:12px;
+                        border-radius: 100%;
+                        background: #D7E2EA;
+                        border:none;
+                        margin: 0 1rem;
+                        padding: 0;
+
+                        &.active{
+                            background: #274562;
+                            opacity: 0.6;
+                        }
+                    }
+                }
+                .owl-nav.disabled{
+                    display: none;   
+                }
+            }
+
+            @media (max-width: 1100px){
+                max-width: 98rem;
+            }
+
+            @media (max-width: 992px){
+                max-width: 100%;
+            }
+        }
+    }
+
+    .wrap_consultation{
+        padding: 5.5rem 0 6rem;
+        background: url("../img/consultation_bg.png") #F2F6F8 no-repeat;
+        background-position: 18% 42%;
+
+        .container-fluid{
+            max-width: 108rem;
+
+            h1{
+                margin-bottom: 1.5rem;
+            }
+
+            h2{
+                font-size: 2.2rem;
+                line-height: 3rem;
+                color: $color_darkblue;
+                text-align: center;
+                margin-bottom: 3rem;
+                font-family: OpenSans-SemiBold;
+            }
+            
+            .wrap_consultation__form{
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                margin-bottom: 1.9rem;
+
+                .form-control{
+                    border: 1px solid #D7E2EA;
+                    font-size: 1.6rem;
+                    line-height: 144.68%;
+                    height: 6.2rem;
+                    border-radius: 0;
+                    margin-right: 1.5rem;
+                    padding: .375rem 2rem;
+
+                    &::placeholder {
+                        color: #98A6B0;
+                    }
+
+                    @media (max-width: 768px){
+                        font-size: 2rem;
+                    }
+
+                    @media (max-width: 650px){
+                        margin-bottom: 2.25rem;
+                    }
+                }
+
+                .btn-primary{
+                    background: $color_red;
+                    font-family: BebasNeue-Bold;
+                    text-transform: uppercase;
+                    color: $color_white;
+                    font-size: 2.4rem;
+                    line-height: 2.6rem;
+                    border: none;
+                    padding: 1.8rem 5.8rem;
+                    border-radius: 0px;
+
+                    @media (max-width: 768px){
+                        font-size: 2.25rem;
+                    }
+                }
+
+                @media (max-width: 650px){
+                    flex-direction: column;
+                }
+            }
+
+            .form-check{
+                line-height: 2.25rem;
+                padding: 0;
+                display: flex;
+
+                .form-check-input{
+                    border: 1px solid #D7E2EA;
+                    border-radius: 0;
+                    background: transparent;
+                    width: 2.25rem;
+                    height: 2.25rem;
+                    margin: 0 1.4rem 0 0;
+
+                    &:checked{
+                        background: url("../img/check_on.png") transparent no-repeat center center;
+                    }
+                }
+                .form-check-label{
+                    font-family: OpenSans-Regular;
+                    font-size: 1.1rem;
+                    line-height: 144.5%;
+                    color: $color_darkblue;
+                    line-height: 2.25rem;
+                    
+                    a{
+                        color: #57CAEF;
+                    }
+                }
+            }
+
+            @media (max-width: 1100px){
+                max-width: 98rem;
+            }
+
+            @media (max-width: 992px){
+                max-width: 100%;
+            }
+        }
+    }
+}
